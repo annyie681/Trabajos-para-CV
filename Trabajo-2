@@ -1,0 +1,139 @@
+import java.util.Scanner;
+
+public class menufinal {
+    public static void main(String[] args) {
+        // cls limpiar pantalla
+        String opcion = "0";
+
+        while (!opcion.equals("6")) {
+
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            opcion = System.console().readLine((""" 
+                            Proyecto Final de la materia Fundamentos de computacion 1
+                            Desarrollo por Humberto Abril Todos los derechos reservado
+                               Version 0.1
+                               Menu princial\n
+                               1. if - Triangulos
+                               2. for - Padovan
+                               3. while - Sumatoria de 1/1+1⁄2+...+1/n
+                               4. do - Conjetura de Collatz
+                               5. Arreglos - Rotar un arreglo a la derecha
+                               6. bye bye
+                               Que quieres hacer y apurate que ando de malas: 
+                               """));
+            
+
+            switch (opcion) {
+                case "1":
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    triangulos();                     
+                    break;
+
+                case "2":
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    padovan();
+                    break;
+
+                case "3":
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    System.out.println("while Sumatoria de 1/1+1⁄2+...+1/n");
+                    System.console().readLine("Presione Enter para continuar");
+                    break;
+
+                case "4":
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    System.out.println("do El profe no sabe");
+                    System.console().readLine("Presione Enter para continuar");
+                    break;
+
+                case "5":
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    System.out.println("Arreglos El profe no sabe");
+                    System.console().readLine("Presione Enter para continuar");
+                    break;
+
+                case "6":
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    System.out.println("Gracias por usar el sistema");
+                    break;
+
+                default:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
+                    System.out.println(opcion + " No disponible (opciones del 1 al 6)");
+                    System.console().readLine("Presione Enter para continuar");
+                    break;
+            }
+        }
+    }
+
+    static void triangulos()
+    {
+        Scanner scanner = new Scanner(System.in);
+        String opc = "s";
+
+        while(opc.equals("s"))
+        {
+            System.out.println("Este programa sirve para saber si se puede formar un triangulo y su tipo");
+            System.out.print("Ingresa la longitud del primer lado: ");
+            double l1 = scanner.nextDouble();
+            System.out.print("Ingresa la longitud del segundo lado: ");
+            double l2 = scanner.nextDouble();
+            System.out.print("Ingresa la longitud del tercer lado: ");
+            double l3 = scanner.nextDouble();
+
+            if (l1 <= 0 || l2 <= 0 || l3 <= 0) {
+                System.out.println("Las longitudes deben ser numeros positivos.");
+            } else {
+                if (l1 + l2 >= l3 && l1 + l3 >= l2 && l2 + l3 >= l1) {
+                    if (l1 == l2 && l2 == l3) {
+                        System.out.println("El triángulo es equilatero.");
+                    } else if (l1 == l2 || l1 == l3 || l2 == l3) {
+                        System.out.println("El triangulo es isosceles.");
+                    } else {
+                        System.out.println("El triangulo es escaleno.");
+                    }
+                } else {
+                    System.out.println("Las longitudes proporcionadas no forman un triangulo valido.");
+                }
+            }  
+        
+            System.out.println("Otra vez s/n: ");
+            opc = scanner.next();
+        }
+        //scanner.close();
+    }
+
+    static void padovan(){
+        String opc = "s";
+
+        while(opc.equals("s"))
+        {
+            System.out.println("Codigo para encontrar la secuencia de Padovan");
+            System.out.println("Desarrollado por Denise Rodriguez");
+            int limite = Integer.parseInt(System.console().readLine("Ingrese el limite de la secuencia:"));
+            int p1 = 1, p2 = 1, p3 = 1, pn;
+        
+            for (; p1 <= limite;) {
+            System.out.print(p1 + "");
+                pn = p1 + p2;
+                p1 = p2;
+                p2 = p3;
+                p3 = pn;
+                if (p1 <= limite) {
+                    System.out.print(", ");
+            }
+        }
+            System.out.print(".");
+        opc = System.console().readLine("Otra ves s/n: ");    
+    }
+    }
+
+}
