@@ -7,3 +7,6 @@ En este trabajo se creó en equipos una base de datos que pudiera mantener un ho
 
 Trabajo 2:
 En este trabajo se practicó lo que es la creación de un menú junto con algunas funciones que se vieron en la clase de Fundamentos 1. Fue de los primeros proyectos con mayor complejidad que se realizaron durante la carrera y practiqué la escritura de código limpio y su correcto orden.
+
+Trabajo 3:
+En este trabajo se practicaron las funciones de PostgreSQL y MariaDB, haciendo un generador de alumnos que tuviera ciertas restricciones. Aprendí a manejar un pocoo mejor lo que es dar especificaciones a las tablas en las bases de datos y las diferencias entre los distintos programas de DB.
